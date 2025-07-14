@@ -1,0 +1,66 @@
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <script src="js/script.js"></script>
+    <title>Taftaf Messagerie</title>
+  </head>
+  <body>
+    <div class="sidebar active">
+      <div class="sidebarHeader">
+        <h1>💬 TafTaf</h1>
+      </div>
+      <div class="sidebarContact">
+        <div class="contact">
+          <div class="contactAvatar"></div>
+          <div class="contactInfo">
+            <p class="contactPseudo">Hyrule200</p>
+            <p class="contactStatus">En ligne</p>
+          </div>
+        </div>
+        <div class="contact">
+          <div class="contactAvatar"></div>
+          <div class="contactInfo">
+            <p class="contactPseudo">JoJO</p>
+            <p class="contactStatus">En ligne</p>
+          </div>
+        </div>
+        <div class="contact">
+          <div class="contactAvatar"></div>
+          <div class="contactInfo">
+            <p class="contactPseudo">Akaza500</p>
+            <p class="contactStatus">En ligne</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chat">
+      <div class="chatHeader">
+        <div class="return">
+          <button onclick="closeChat()">retour</button>
+        </div>
+        <div class="chatContact">
+          <div class="chatAvatar"></div>
+          <div class="chatInfo">
+            <p class="chatPseudo"></p>
+            <p class="chatStatus">En ligne</p>
+          </div>
+        </div>
+      </div>
+      <div class="chatContent"></div>
+      <div class="chatResponse">
+        <textarea
+          class="messageInput"
+          name="message"
+          id="message"
+          placeholder="Tapez votre message"
+          rows="1"
+        ></textarea>
+        <button class="send-btn" id="sendBtn" onclick=send()>Envoyer</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="js/demo.js"></script>
