@@ -1,6 +1,7 @@
 :root {
   --primary: #7f5af0;
   --primary-dark: #6841ec;
+  --sent: linear-gradient(135deg, #667eea, #764ba2);
   --secondary: #f5f5f5;
   --background: #f2f0fb;
   --white: #ffffff;
@@ -20,7 +21,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background: var(--background);
   color: var(--text);
   height: 100vh;
@@ -50,6 +51,30 @@ body {
   width: 100%;
   box-shadow: var(--shadow);
   transition: transform 0.3s ease;
+}
+
+.accueil {
+  width: 100%;
+  display: flex;
+}
+
+.accueil h1 {
+  height: fit-content;
+  margin: auto;
+  font-size: xxx-large;
+  color: var(--primary);
+}
+
+.avatarLetter {
+  color: var(--white);
+  font-size: 1.3rem;
+  font-weight: 800;
+  justify-self: center;
+  margin-top: 10px;
+}
+
+.hide {
+  display: none;
 }
 
 .sidebar.active {
@@ -198,7 +223,34 @@ body {
   overflow-y: auto;
   background-color: var(--background);
   border-radius: var(--radius);
-  box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.message {
+  border-radius: 1rem;
+  width: 70%;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+.message.sent {
+  background: var(--sent);
+  justify-self: end;
+}
+.message.received {
+  background: var(--sent);
+}
+
+.messageTime {
+  color: var(--border);
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+
+.messageText {
+  color: var(--secondary);
+  font-weight: 400;
+  text-align: justify;
 }
 
 /* CHAT RESPONSE */
@@ -264,6 +316,10 @@ body {
 
   .chat {
     width: calc(100% - 300px);
+  }
+
+  .hide {
+    display: none;
   }
 
   /* On masque le bouton retour sur desktop */

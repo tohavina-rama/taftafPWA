@@ -13,21 +13,25 @@
       </div>
       <div class="sidebarContact">
         <div class="contact">
-          <div class="contactAvatar"></div>
+          <div class="contactAvatar"><p class="avatarLetter">HY</p></div>
           <div class="contactInfo">
             <p class="contactPseudo">Hyrule200</p>
             <p class="contactStatus">En ligne</p>
           </div>
         </div>
         <div class="contact">
-          <div class="contactAvatar"></div>
+          <div class="contactAvatar">
+            <p class="avatarLetter">JO</p>
+          </div>
           <div class="contactInfo">
             <p class="contactPseudo">JoJO</p>
             <p class="contactStatus">En ligne</p>
           </div>
         </div>
         <div class="contact">
-          <div class="contactAvatar"></div>
+          <div class="contactAvatar">
+            <p class="avatarLetter">AK</p>
+          </div>
           <div class="contactInfo">
             <p class="contactPseudo">Akaza500</p>
             <p class="contactStatus">En ligne</p>
@@ -35,7 +39,10 @@
         </div>
       </div>
     </div>
-    <div class="chat">
+    <div class="accueil">
+      <h1 class="mainTitle">Bienvenu sur TafTaf</h1>
+    </div>
+    <div class="chat hide">
       <div class="chatHeader">
         <div class="return">
           <button onclick="closeChat()">retour</button>
@@ -57,10 +64,8 @@
           placeholder="Tapez votre message"
           rows="1"
         ></textarea>
-        <button class="send-btn" id="sendBtn" onclick=send()>Envoyer</button>
+        <button class="send-btn" id="sendBtn">Envoyer</button>
       </div>
     </div>
   </body>
 </html>
-
-<script src="js/demo.js"></script>
