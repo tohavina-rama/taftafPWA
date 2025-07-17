@@ -66,6 +66,7 @@ function saveMessage(text) {
 
   messages.push(newMessage);
   localStorage.setItem(chatKey, JSON.stringify(messages));
+  simulateReception(currentContact, text);
 
   const chatContent = document.querySelector(".chatContent");
   const div = document.createElement("div");
@@ -97,3 +98,58 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+//la j'ai rajouté les notifications
+
+function simulateReception(contact, originalText) {
+  setTimeout(() => {
+    const chatKey = `chat-${contact}`;
+    let messages = JSON.parse(localStorage.getItem(chatKey)) || [];
+
+    const replyText = `Réponse à: ${originalText}`;
+    const time = new Date().toLocaleTimeString("fr-FR", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    const reply = {
+      text: replyText,
+      sent: false,
+      time,
+    };
+
+    messages.push(reply);
+    localStorage.setItem(chatKey, JSON.stringify(messages));
+
+    if (currentContact === contact) {
+      const chatContent = document.querySelector(".chatContent");
+      const div = document.createElement("div");
+      div.className = "message received";
+      div.innerHTML = `
+        <div class="messageText">${replyText}</div>
+        <div class="messageTime">${time}</div>
+      `;
+      chatContent.appendChild(div);
+      chatContent.scrollTop = chatContent.scrollHeight;
+    }
+
+    if (Notification.permission === "granted") {
+      new Notification(`Message de ${contact}`, {
+        body: replyText,
+        icon: "https://via.placeholder.com/128"
+      });
+
+    }
+  }, 2000);
+}
+
+
+if ("Notification" in window) {
+  if (Notification.permission === "default") {
+    Notification.requestPermission().then((permission) => {
+      console.log("Permission de notification :", permission);
+    });
+  } else {
+    console.log("Permission déjà définie :", Notification.permission);
+  }
+}
