@@ -136,7 +136,7 @@ function simulateReception(contact, originalText) {
     if (Notification.permission === "granted") {
       new Notification(`Message de ${contact}`, {
         body: replyText,
-        icon: "https://via.placeholder.com/128"
+        icon: "./assets/images/icon.ico"
       });
 
     }
