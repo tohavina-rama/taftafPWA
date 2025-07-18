@@ -75,7 +75,7 @@ function saveMessage(text) {
     <div class="messageText">${text}</div>
     <div class="messageTime">${time}</div>
   `;
-  chatContent.prepend(div);
+  chatContent.appendChild(div);
   chatContent.scrollTop = chatContent.scrollHeight;
 
   document.getElementById("message").value = "";
