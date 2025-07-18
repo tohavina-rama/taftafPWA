@@ -36,6 +36,9 @@ self.addEventListener('activate', evt=>{
 
 // Vérifie la connexion de l'utilisateur
 self.addEventListener('fetch', evt=>{
+    // On évite toutes les requêtes qui ne sont pas en http
+    if (!evt.request.url.startsWith('http')) return;
+
     evt.respondWith(
         (async () => {
             // Vérif si la ressource est dans le cache
@@ -48,6 +51,10 @@ self.addEventListener('fetch', evt=>{
 
             // Sinon on va chercher en ligne
             const response = await fetch(evt.request);
+
+            if (!response || response.status !== 200 || response.type !== 'basic') {
+                return response;
+            }
 
             // On met la réponse en cache pour plus tard
             const cache = await caches.open(cacheName);
