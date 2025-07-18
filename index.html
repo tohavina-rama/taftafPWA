@@ -4,20 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/stylesheet.css" />
-    <script src="js/script.js"></script>
-    <script src="sw.js"></script> 
     <link rel="icon" href="./assets/images/icon.ico" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <meta name="theme-color" content="#7f5af0" />
+    <meta name="description" content="TafTaf est une messagerie simple et rapide conçue pour les étudiants. Discutez, échangez et restez connectés, même hors ligne, sur téléphone et ordinateur !">
     <title>Taftaf Messagerie</title>
-
-    <script> 
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js');
-      }
-    </script>
-    
   </head>
+
   <body>
     <div class="sidebar active">
       <div class="sidebarHeader">
@@ -79,5 +72,13 @@
         <button class="send-btn" id="sendBtn">Envoyer</button>
       </div>
     </div>
+
+    <script src="js/script.js" defer></script>
+    <script> 
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+      }
+    </script>
+
   </body>
 </html>
